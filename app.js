@@ -32,21 +32,23 @@ var createNewTaskElement=function(taskString){
     var deleteButton=document.createElement("button");//delete button
     var deleteButtonImg=document.createElement("img");//delete button image
 
-    listItem.className = 'task-list__item';
+    listItem.className = 'task';
 
     label.innerText=taskString;
-    label.className='task';
+    label.className='task__text';
 
     //Each elements, needs appending
     checkBox.type="checkbox";
+    checkBox.className='checkbox';
     editInput.type="text";
-    editInput.className="task";
+    editInput.className="task__input input_text";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
+    editButton.className="btn_edit";
 
-    deleteButton.className="delete";
+    deleteButton.className="btn_delete";
     deleteButtonImg.src='./remove.svg';
+    deleteButtonImg.className="img_delete";
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -87,11 +89,11 @@ var editTask=function(){
     var editInput=listItem.querySelector('input[type=text]');
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("edit-mode");
-    //If class of the parent is .edit-mode
+    var containsClass=listItem.classList.contains("task_edit-mode");
+    //If class of the parent is .task_edit-mode
     if(containsClass){
 
-        //switch to .edit-mode
+        //switch to .task_edit-mode
         //label becomes the inputs value.
         label.innerText=editInput.value;
         editBtn.innerText="Edit";
@@ -100,8 +102,8 @@ var editTask=function(){
         editBtn.innerText="Save";
     }
 
-    //toggle .edit-mode on the parent.
-    listItem.classList.toggle("edit-mode");
+    //toggle .task_edit-mode on the parent.
+    listItem.classList.toggle("task_edit-mode");
 };
 
 
