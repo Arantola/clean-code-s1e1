@@ -69,7 +69,7 @@ const addTask = function() {
   incompleteTaskHolder.appendChild( listItem );
   bindTaskEvents( listItem, taskCompleted );
 
-  taskInput.value="";
+  taskInput.value = "";
 
 }
 
@@ -154,8 +154,8 @@ addButton.addEventListener("click", ajaxRequest);
 const bindTaskEvents = function( taskListItem, checkBoxEventHandler ) {
   console.log("bind list item events");
 //select ListItems children
-  const checkBox = taskListItem.querySelector(".task__checkbox");
-  const editButton = taskListItem.querySelector(".btn_edit");
+  const checkBox     = taskListItem.querySelector(".task__checkbox");
+  const editButton   = taskListItem.querySelector(".btn_edit");
   const deleteButton = taskListItem.querySelector(".btn_delete");
 
   //Bind editTask to edit button.
