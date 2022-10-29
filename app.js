@@ -22,7 +22,7 @@ const createNewTaskElement = function( taskString ) {
 
   //input (checkbox)
   const checkBox         = document.createElement("input");  // checkbx
-  checkBox.className     = "checkbox";
+  checkBox.className     = "task__checkbox";
   checkBox.type          = "checkbox";
 
   //label
@@ -37,12 +37,12 @@ const createNewTaskElement = function( taskString ) {
 
   //button.edit
   const editButton       = document.createElement("button");  // edit button
-  editButton.className   = "btn btn_edit";
+  editButton.className   = "task__btn btn_edit";
   editButton.innerText   = "Edit";  // innerText encodes special characters, HTML does not.
 
   //button.delete
   const deleteButton     = document.createElement("button");  // delete button
-  deleteButton.className = "btn btn_delete";
+  deleteButton.className = "task__btn btn_delete";
   const deleteButtonImg  = document.createElement("img");  // delete button image
   deleteButtonImg.className = "img_delete";
   deleteButtonImg.src    = "./remove.svg";
@@ -154,7 +154,7 @@ addButton.addEventListener("click", ajaxRequest);
 const bindTaskEvents = function( taskListItem, checkBoxEventHandler ) {
   console.log("bind list item events");
 //select ListItems children
-  const checkBox = taskListItem.querySelector(".checkbox");
+  const checkBox = taskListItem.querySelector(".task__checkbox");
   const editButton = taskListItem.querySelector(".btn_edit");
   const deleteButton = taskListItem.querySelector(".btn_delete");
 
