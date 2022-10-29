@@ -27,12 +27,12 @@ const createNewTaskElement = function( taskString ) {
 
   //label
   const label            = document.createElement("label");  // label
-  label.className        = "task__text task__label";
+  label.className        = "task__line task__label";
   label.innerText        = taskString;
 
   //input (text)
   const editInput        = document.createElement("input");  // text
-  editInput.className    = "task__text task__input input_text";
+  editInput.className    = "task__line task__input";
   editInput.type         = "text";
 
   //button.edit
@@ -82,7 +82,7 @@ const editTask = function() {
   const listItem      = this.parentNode;
 
   const editInput     = listItem.querySelector(".task__input");
-  const label         = listItem.querySelector(".task__text");
+  const label         = listItem.querySelector(".task__label");
   const editBtn       = listItem.querySelector(".btn_edit");
   const containsClass = listItem.classList.contains("task_edit-mode");
   //If class of the parent is .task_edit-mode
